@@ -181,7 +181,9 @@ import { popDataResolver } from './resolvers/popDataResolver'
     //Mutation for re-initializing the database
     //const gqlQuery = gql`mutation{createEntry(data:{location:"${key}"}){location}}`
 
-    app.listen(4000, () => {
-        console.log(`express server started at ${apolloServer.graphqlPath}`)
+    var PORT = process.env.PORT || 4000
+
+    app.listen(PORT, () => {
+        console.log(`express server started at ${apolloServer.graphqlPath} on ${PORT}`)
     })
 })()
