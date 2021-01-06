@@ -31,7 +31,7 @@ import { popDataResolver } from './resolvers/popDataResolver'
     })
     apolloServer.applyMiddleware({ app, path: '/graphql' })
 
-    app.use(cors())
+    app.use(cors({origin: true}))
     app.use(express.json())
 
     //Enable graphql middleware for browser playground
